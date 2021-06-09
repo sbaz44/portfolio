@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import $ from "jquery";
 export default function ClientCard(props) {
-  // const [activeClient, setactiveClient] = useState("");
-
   return (
     <div
       className="client-card"

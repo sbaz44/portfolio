@@ -6,15 +6,19 @@ import $ from "jquery";
 export default function Header(props) {
   const [scroll, setScroll] = useState(0);
   useEffect(() => {
-    $(window).scroll(function () {
-      setScroll($(window).scrollTop());
-    });
+    let isCancelled = false;
+    if (!isCancelled) {
+      $(window).scroll(function () {
+        setScroll($(window).scrollTop());
+      });
+    }
     return () => {
+      isCancelled = true;
       $(window).off("scroll", function () {
         setScroll($(window).scrollTop());
       });
     };
-  }, [scroll]);
+  }, []);
   return (
     <header>
       <NavLink to="/">

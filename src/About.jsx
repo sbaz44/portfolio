@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { Transition } from "react-transition-group";
 import Header from "./component/Header";
 import $ from "jquery";
-import { TweenLite } from "gsap/all";
 import me from "./assests/img/me.png";
 import js from "./assests/img/JS.png";
 import rn from "./assests/img/rn.png";
@@ -18,11 +16,10 @@ import git from "./assests/img/git.png";
 import xd from "./assests/img/xd.png";
 import Footer from "./component/Footer";
 let scroll = 0;
-const startState = { autoAlpha: 0, x: 500 };
 export default class About extends Component {
   scrollHandler2 = () => {
     scroll = window.scrollY;
-    if (window.location.pathname === "/about") {
+    if (window.location.hash === "#/about") {
       if (window.innerWidth > 768) {
         if (scroll >= 200) {
           $("body").css("background-color", "#fff");
@@ -35,8 +32,6 @@ export default class About extends Component {
         }
       } else {
         if (scroll >= 100) {
-          console.log("else");
-
           $("body").css("background-color", "#fff");
           $(".info").css("background-color", "rgba(0, 0, 0, 0.8)");
           $(".intro h1").css("color", "#fff");
@@ -50,9 +45,9 @@ export default class About extends Component {
   };
 
   componentDidMount() {
+    document.title = "About • Shahbaz Shaikh";
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
-    console.log(window.location.hash + "===" + "#/about");
     if (window.location.hash === "#/about") {
       window.addEventListener("scroll", this.scrollHandler2, false);
     }
@@ -85,19 +80,6 @@ export default class About extends Component {
       );
     };
     return (
-      // <Transition
-      //   unmountOnExit
-      //   in={this.props.show}
-      //   timeout={3000}
-      //   onEnter={(node) => TweenLite.set(node, startState)}
-      //   addEndListener={(node, done) => {
-      //     TweenLite.to(node, 2, {
-      //       autoAlpha: this.props.show ? 1 : 0,
-      //       x: this.props.show ? 0 : 500,
-      //       onComplete: done,
-      //     });
-      //   }}
-      // >
       <div className="about-container">
         <Header link="/" />
         <div
@@ -173,7 +155,7 @@ export default class About extends Component {
               <Language text="FASTAPI" level="NOVICE" img={fastapi} />
               <Language text="MONGODB" level="PROFICIENT" img={mongodb} />
               <Language text="NODEJS" level="NOVICE" img={node} />
-              <Language text="GIT" level="NOVICE" img={git} />
+              <Language text="GIT" level="PROFICIENT" img={git} />
               <Language text="ADOBE XD" level="PROFICIENT" img={xd} />
             </div>
           </div>
@@ -182,7 +164,6 @@ export default class About extends Component {
           <Footer />
         </div>
       </div>
-      // </Transition>
     );
   }
 }
