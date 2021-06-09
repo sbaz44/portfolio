@@ -295,7 +295,7 @@ export default class Portfolio extends Component {
   componentDidMount() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
-    if (window.location.pathname !== "/about") {
+    if (window.location.hash !== "#/about") {
       window.addEventListener("scroll", this.scrollHandler, false);
     }
     console.log(window.innerWidth);
