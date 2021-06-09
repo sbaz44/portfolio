@@ -52,7 +52,7 @@ export default class About extends Component {
   componentDidMount() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
-    console.log(this.props.location);
+    console.log(window.location.hash + "===" + "#/about");
     if (window.location.hash === "#/about") {
       window.addEventListener("scroll", this.scrollHandler2, false);
     }
