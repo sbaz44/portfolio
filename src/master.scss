@@ -659,7 +659,7 @@ header {
     }
     @media only screen and (max-width: 768px) {
       background-position: center;
-      height: 198vh;
+      height: 208vh;
       background-size: cover;
       background-position-x: center;
     }
@@ -713,6 +713,25 @@ header {
           font-size: 1rem;
           font-weight: 500;
         }
+        .download {
+          --border-color: #858585;
+          --border-width: 5px;
+          --bottom-distance: 0px; /* you can increase this */
+          display: inline-block;
+          background-image: linear-gradient(
+            var(--border-color),
+            var(--border-color)
+          );
+          cursor: pointer;
+          background-size: 100% var(--border-width);
+          background-repeat: no-repeat;
+          transition: background-size 0.5s;
+          background-position: 50% calc(100% - var(--bottom-distance));
+          a {
+            color: #fff !important;
+          }
+        }
+
         .sizedbox {
           height: 30px;
         }

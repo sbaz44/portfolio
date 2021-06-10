@@ -118,6 +118,16 @@ export default class About extends Component {
 
                 <h2>English</h2>
                 <h2>Hindi</h2>
+                <div className="sizedbox" />
+                <h1 className="download">
+                  <a
+                    href="https://drive.google.com/file/d/1Uw7Wkq2oxGGPJ6vfy9cueX7Ef2_DhBkb/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download Resume
+                  </a>
+                </h1>
               </div>
               <div className="language">
                 <h1>Work Experience</h1>
