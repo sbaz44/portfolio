@@ -355,7 +355,11 @@ export default class Portfolio extends Component {
                 data={item}
                 onClick={() => {
                   document.body.style.overflow = "hidden";
-                  this.setState({ isPop: true, ActiveClient: item });
+                  this.setState({
+                    isPop: true,
+                    ActiveClient: item,
+                    isApp: false,
+                  });
                 }}
               />
             ))}
@@ -369,7 +373,12 @@ export default class Portfolio extends Component {
                 key={index + 25}
                 data={item}
                 onClick={() => {
-                  this.setState({ isPop: true, ActiveClient: item });
+                  document.body.style.overflow = "hidden";
+                  this.setState({
+                    isPop: true,
+                    ActiveClient: item,
+                    isApp: true,
+                  });
                 }}
               />
             ))}
@@ -435,11 +444,15 @@ export default class Portfolio extends Component {
                   showArrows={false}
                   showStatus={false}
                   showIndicators={false}
-                  // dynamicHeight
                   thumbWidth={120}
                 >
                   {this.state.ActiveClient.screen.map((item, index) => (
-                    <img key={index + 699} alt="Client" src={item} />
+                    <img
+                      key={index + 699}
+                      alt="Client"
+                      src={item}
+                      className={this.state.isApp ? "app-image" : ""}
+                    />
                   ))}
                 </Carousel>
               </div>
