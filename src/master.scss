@@ -649,7 +649,7 @@ header {
 .about-container {
   // height: 500vh;
   .parallax {
-    height: 150vh;
+    // height: 150vh;
     background-attachment: fixed;
     background-position: right;
     background-position-y: bottom;
@@ -659,7 +659,7 @@ header {
     }
     @media only screen and (max-width: 768px) {
       background-position: center;
-      height: 208vh;
+      // height: 208vh;
       background-size: cover;
       background-position-x: center;
     }
@@ -669,7 +669,7 @@ header {
       .intro {
         display: flex;
         align-items: center;
-        height: 100vh;
+        // height: 100vh;
         padding: 6vw;
         h1 {
           font-family: "Black Han Sans", sans-serif;
@@ -690,13 +690,14 @@ header {
       }
       .row {
         display: flex;
-        height: 10vh;
+        // height: 10vh;
         color: #fff;
         padding: 0 6vw;
         @media (min-width: 768px) and (max-width: 1024px) {
         }
         @media only screen and (max-width: 768px) {
           flex-direction: column;
+          padding-bottom: 4vw;
         }
         h1 {
           font-family: "Staatliches", "Roboto";
