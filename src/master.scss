@@ -669,8 +669,11 @@ header {
       .intro {
         display: flex;
         align-items: center;
-        // height: 100vh;
         padding: 6vw;
+        padding-top: 70vh;
+        @media only screen and (max-width: 768px) {
+          padding-top: 0;
+        }
         h1 {
           font-family: "Black Han Sans", sans-serif;
           width: 50%;
