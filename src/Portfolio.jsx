@@ -329,7 +329,7 @@ export default class Portfolio extends Component {
         <Header link="/about" />
         <div className="quote">
           <div className="text">
-            while(!(succedd=try())); <span>|</span>
+            while(!(succeed=try())); <span>|</span>
           </div>
         </div>
 
