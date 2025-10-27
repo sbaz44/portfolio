@@ -2,23 +2,35 @@ import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import logoblack from "../assests/img/name-black.png";
 import whitelogo from "../assests/img/name-white.png";
-import $ from "jquery";
 export default function Header(props) {
   const [scroll, setScroll] = useState(0);
+  //   useEffect(() => {
+  //     let isCancelled = false;
+  //     if (!isCancelled) {
+  //       $(window).scroll(function () {
+  //         setScroll($(window).scrollTop());
+  //       });
+  //     }
+  //     return () => {
+  //       isCancelled = true;
+  //       $(window).off("scroll", function () {
+  //         setScroll($(window).scrollTop());
+  //       });
+  //     };
+  //   }, []);
+
   useEffect(() => {
-    let isCancelled = false;
-    if (!isCancelled) {
-      $(window).scroll(function () {
-        setScroll($(window).scrollTop());
-      });
-    }
+    const handleScroll = () => {
+      setScroll(window.pageYOffset || document.documentElement.scrollTop);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     return () => {
-      isCancelled = true;
-      $(window).off("scroll", function () {
-        setScroll($(window).scrollTop());
-      });
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <header>
       <NavLink to="/">
@@ -41,7 +53,7 @@ export default function Header(props) {
           className="link"
           style={scroll >= 200 ? { color: "white" } : { color: "black" }}
         >
-          {props.link === "/" ? "PORFOLIO" : "ABOUT"}
+          {props.link === "/" ? "ABOUT" : "PROJECTS"}
         </div>
       </NavLink>
     </header>

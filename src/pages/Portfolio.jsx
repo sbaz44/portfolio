@@ -1,62 +1,62 @@
 import React, { Component } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Header from "./component/Header";
-import $ from "jquery";
-import pc from "./assests/img/pc.png";
-import mobile from "./assests/img/mobile.png";
-import ClientCard from "./component/ClientCard";
-import tcc from "./assests/img/client/tcc.png";
-import devo from "./assests/img/client/devo.png";
-import mani from "./assests/img/client/mani.png";
-import fluid from "./assests/img/client/fluid.png";
-import maheshwari from "./assests/img/client/maheshwari.png";
-import silver from "./assests/img/client/silver.png";
-import sambhav from "./assests/img/client/sambhav.png";
-import japan from "./assests/img/client/japan.png";
-import bonono from "./assests/img/client/bonono.png";
-import alfa from "./assests/img/client/alfa.png";
-import japan1 from "./assests/img/screen/japan1.jpg";
-import devo1 from "./assests/img/screen/devo1.jpg";
-import devo2 from "./assests/img/screen/devo2.jpg";
-import devo3 from "./assests/img/screen/devo3.jpg";
-import devo4 from "./assests/img/screen/devo4.jpg";
-import devo5 from "./assests/img/screen/devo5.jpg";
-import alfa1 from "./assests/img/screen/alfa1.jpg";
-import mani1 from "./assests/img/screen/mani1.jpg";
-import tcg1 from "./assests/img/screen/tcg1.jpg";
-import tcg2 from "./assests/img/screen/tcg2.jpg";
-import tcg3 from "./assests/img/screen/tcg3.jpg";
-import tcg6 from "./assests/img/screen/tcg6.jpg";
-import tcg7 from "./assests/img/screen/tcg7.jpg";
-import fluid1 from "./assests/img/screen/fluid1.jpg";
-import fluid2 from "./assests/img/screen/fluid2.jpg";
-import fluid3 from "./assests/img/screen/fluid3.jpg";
-import fluid4 from "./assests/img/screen/fluid4.jpg";
-import fluid5 from "./assests/img/screen/fluid5.jpg";
-import mah1 from "./assests/img/screen/mah1.jpg";
-import mah2 from "./assests/img/screen/mah2.jpg";
-import mah3 from "./assests/img/screen/mah3.jpg";
-import mah4 from "./assests/img/screen/mah4.jpg";
-import mah5 from "./assests/img/screen/mah5.jpg";
-import mah6 from "./assests/img/screen/mah6.jpg";
-import sam1 from "./assests/img/screen/sam1.jpg";
-import sam2 from "./assests/img/screen/sam2.jpg";
-import sam3 from "./assests/img/screen/sam3.jpg";
-import sam4 from "./assests/img/screen/sam4.jpg";
-import sam6 from "./assests/img/screen/sam6.jpg";
-import silver1 from "./assests/img/screen/silver1.jpg";
-import silver2 from "./assests/img/screen/silver2.jpg";
-import silver4 from "./assests/img/screen/silver4.jpg";
-import silver5 from "./assests/img/screen/silver5.jpg";
-import silver6 from "./assests/img/screen/silver6.jpg";
-import bon1 from "./assests/img/screen/bon1.jpg";
-import bon2 from "./assests/img/screen/bon2.jpg";
-import bon3 from "./assests/img/screen/bon3.jpg";
-import bon4 from "./assests/img/screen/bon4.jpg";
-import appj1 from "./assests/img/screen/appj1.jpeg";
-import appa1 from "./assests/img/screen/appa1.jpeg";
-import Footer from "./component/Footer";
+import pc from "../assests/img/pc.png";
+import mobile from "../assests/img/mobile.png";
+import ClientCard from "../component/ClientCard";
+import tcc from "../assests/img/client/tcc.png";
+import devo from "../assests/img/client/devo.png";
+import mani from "../assests/img/client/mani.png";
+import fluid from "../assests/img/client/fluid.png";
+import maheshwari from "../assests/img/client/maheshwari.png";
+import silver from "../assests/img/client/silver.png";
+import sambhav from "../assests/img/client/sambhav.png";
+import japan from "../assests/img/client/japan.png";
+import bonono from "../assests/img/client/bonono.png";
+import alfa from "../assests/img/client/alfa.png";
+import japan1 from "../assests/img/screen/japan1.jpg";
+import devo1 from "../assests/img/screen/devo1.jpg";
+import devo2 from "../assests/img/screen/devo2.jpg";
+import devo3 from "../assests/img/screen/devo3.jpg";
+import devo4 from "../assests/img/screen/devo4.jpg";
+import devo5 from "../assests/img/screen/devo5.jpg";
+import alfa1 from "../assests/img/screen/alfa1.jpg";
+import mani1 from "../assests/img/screen/mani1.jpg";
+import tcg1 from "../assests/img/screen/tcg1.jpg";
+import tcg2 from "../assests/img/screen/tcg2.jpg";
+import tcg3 from "../assests/img/screen/tcg3.jpg";
+import tcg6 from "../assests/img/screen/tcg6.jpg";
+import tcg7 from "../assests/img/screen/tcg7.jpg";
+import fluid1 from "../assests/img/screen/fluid1.jpg";
+import fluid2 from "../assests/img/screen/fluid2.jpg";
+import fluid3 from "../assests/img/screen/fluid3.jpg";
+import fluid4 from "../assests/img/screen/fluid4.jpg";
+import fluid5 from "../assests/img/screen/fluid5.jpg";
+import mah1 from "../assests/img/screen/mah1.jpg";
+import mah2 from "../assests/img/screen/mah2.jpg";
+import mah3 from "../assests/img/screen/mah3.jpg";
+import mah4 from "../assests/img/screen/mah4.jpg";
+import mah5 from "../assests/img/screen/mah5.jpg";
+import mah6 from "../assests/img/screen/mah6.jpg";
+import sam1 from "../assests/img/screen/sam1.jpg";
+import sam2 from "../assests/img/screen/sam2.jpg";
+import sam3 from "../assests/img/screen/sam3.jpg";
+import sam4 from "../assests/img/screen/sam4.jpg";
+import sam6 from "../assests/img/screen/sam6.jpg";
+import silver1 from "../assests/img/screen/silver1.jpg";
+import silver2 from "../assests/img/screen/silver2.jpg";
+import silver4 from "../assests/img/screen/silver4.jpg";
+import silver5 from "../assests/img/screen/silver5.jpg";
+import silver6 from "../assests/img/screen/silver6.jpg";
+import bon1 from "../assests/img/screen/bon1.jpg";
+import bon2 from "../assests/img/screen/bon2.jpg";
+import bon3 from "../assests/img/screen/bon3.jpg";
+import bon4 from "../assests/img/screen/bon4.jpg";
+import appj1 from "../assests/img/screen/appj1.jpeg";
+import appa1 from "../assests/img/screen/appa1.jpeg";
+import { getElement } from "../utils";
+import Header from "../component/Header";
+import Footer from "../component/Footer";
 
 var scroll = 0;
 export default class Portfolio extends Component {
@@ -132,6 +132,7 @@ export default class Portfolio extends Component {
       },
       {
         name: "The College Guidance Co",
+        link: "https://www.thecollegeguidanceco.com/",
         logo: tcc,
         bg: "rgba(249, 198, 26,0.8)",
         screen: [tcg1, tcg2, tcg3, tcg6, tcg7],
@@ -185,6 +186,7 @@ export default class Portfolio extends Component {
       {
         name: "Sambhav Group",
         logo: sambhav,
+        link: "https://sambhavgroup.co.in/",
         bg: "rgba(91, 63, 54,0.8)",
         screen: [sam1, sam2, sam3, sam4, sam6],
         role: [
@@ -202,6 +204,7 @@ export default class Portfolio extends Component {
       {
         name: "Silver House",
         logo: silver,
+        link: "https://silverhouse.co.in/",
         bg: "rgba(0, 0, 0,0.8)",
         screen: [silver1, silver2, silver4, silver5, silver6],
         role: [
@@ -278,45 +281,60 @@ export default class Portfolio extends Component {
   };
   scrollHandler = () => {
     scroll = window.scrollY;
-    if (window.location.hash !== "#/about") {
-      if (scroll >= 200) {
-        $("body").css("background-color", "#000");
-      } else {
-        $("body").css("background-color", "#fff");
-      }
+    // if (window.location.hash !== "#/projects") {
+    const body = getElement("body");
+    if (scroll >= 200) {
+      body.style.backgroundColor = "#000";
+      // $("body").css("background-color", "#000");
+    } else {
+      // $("body").css("background-color", "#fff");
+      body.style.backgroundColor = "#fff";
     }
+    // }
   };
   tab1Click = () => {
-    $(".indicator").css("left", "0%");
+    const indicator = getElement(".indicator");
+    indicator.style.left = "0%";
+    // $(".indicator").css("left", "0%");
     const reel = document.querySelector(".tabs");
     reel.style.transform = "translateX(0%)";
-    $(".tab1").animate(
-      {
-        scrollTop: 0,
-      },
-      100
-    );
+    document.querySelector(".tab1").scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    // $(".tab1").animate(
+    //   {
+    //     scrollTop: 0,
+    //   },
+    //   100
+    // );
   };
 
   tab2Click = () => {
-    $(".indicator").css("left", "50%");
+    const indicator = getElement(".indicator");
+    indicator.style.left = "50%";
+
+    // $(".indicator").css("left", "50%");
     const reel = document.querySelector(".tabs");
     reel.style.transform = "translateX(-50%)";
-
-    $(".tab2").animate(
-      {
-        scrollTop: 0,
-      },
-      100
-    );
+    document.querySelector(".tab2").scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    // $(".tab2").animate(
+    //   {
+    //     scrollTop: 0,
+    //   },
+    //   100
+    // );
   };
   componentDidMount() {
     document.title = "Portfolio • Shahbaz Shaikh";
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    if (window.location.hash !== "#/about") {
-      window.addEventListener("scroll", this.scrollHandler, false);
-    }
+    // if (window.location.hash !== "#/projects") {
+    window.addEventListener("scroll", this.scrollHandler, false);
+    // }
   }
 
   componentWillUnmount() {
@@ -326,7 +344,7 @@ export default class Portfolio extends Component {
   render() {
     return (
       <div className="portfolio-container">
-        <Header link="/about" />
+        <Header link="/" />
         <div className="quote">
           <div className="text">
             while(!(succeed=try())); <span>|</span>
@@ -405,34 +423,43 @@ export default class Portfolio extends Component {
               className="overlay"
               onClick={() => {
                 document.body.style.overflow = "";
-                $(".slider-wrapper").css("height", 0);
-                $(".tabs").css("display", "none");
-                $(".tab").css("display", "none");
-                $(".info h1").css("display", "none");
-                $(".slider").css("height", 0);
-                $(".info").css("height", 0);
-                $(".thumbs-wrapper").css("margin", 0);
-                $(".thumbs-wrapper").css("height", 0);
-                $(".popUp").animate(
-                  {
-                    "min-height": "0",
-                    padding: "0",
-                    display: "none",
-                  },
-                  300,
-                  () => {
-                    $(".line").css({ display: "block" }).animate(
-                      {
-                        width: "0%",
-                        left: "50%",
-                      },
-                      400
-                    );
-                  }
-                );
-                setTimeout(() => {
+                getElement(".slider-wrapper").style.height = 0;
+                getElement(".slider").style.height = 0;
+                getElement(".info").style.height = 0;
+                getElement(".thumbs-wrapper").style.height = 0;
+                getElement(".thumbs-wrapper").style.margin = 0;
+                getElement(".tabs").style.display = "none";
+                getElement(".tab").style.display = "none";
+                getElement(".info h1").style.display = "none";
+
+                const popUp = document.querySelector(".popUp");
+                if (popUp) {
+                  popUp.style.transition = "all 300ms ease";
+                  popUp.style.minHeight = "0";
+                  popUp.style.padding = "0";
+
+                  setTimeout(() => {
+                    popUp.style.display = "none";
+
+                    // Animate line element after popUp animation completes
+                    const line = document.querySelector(".line");
+                    if (line) {
+                      line.style.display = "block";
+                      line.style.transition = "all 400ms ease";
+                      line.style.width = "0%";
+                      line.style.left = "50%";
+
+                      // Set state after all animations complete
+                      setTimeout(() => {
+                        this.setState({ isPop: false });
+                      }, 400);
+                    } else {
+                      this.setState({ isPop: false });
+                    }
+                  }, 300);
+                } else {
                   this.setState({ isPop: false });
-                }, 600);
+                }
               }}
             />
             <div className="popUp">
@@ -457,7 +484,23 @@ export default class Portfolio extends Component {
                 </Carousel>
               </div>
               <div className="info">
-                <h1>{this.state.ActiveClient.name}</h1>
+                <h1
+                  style={{
+                    marginBottom: this.state.ActiveClient?.link ? "1vw" : "2vw",
+                  }}
+                >
+                  {this.state.ActiveClient.name}
+                </h1>
+                {this.state.ActiveClient?.link && (
+                  <a
+                    className="link"
+                    style={{ textAlign: "center", display: "block" }}
+                    href={this.state.ActiveClient?.link}
+                    target="_blank"
+                  >
+                    Visit website
+                  </a>
+                )}
                 <div className="tab">
                   <div className="tab-header" onClick={this.tab1Click}>
                     <p>Roles and Responsibilities</p>
@@ -538,3 +581,5 @@ export default class Portfolio extends Component {
     );
   }
 }
+
+// https://sawad.framer.website/

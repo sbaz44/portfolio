@@ -1,25 +1,6 @@
-import React from "react";
-import $ from "jquery";
+import { getElement } from "../utils";
 
 export default function Footer() {
-  const Social = (data) => {
-    return (
-      <div className="link-wrapper">
-        <a href={data.link} target="_blank" rel="noopener noreferrer">
-          <div
-            className={"social " + data.name}
-            onMouseEnter={() => $("." + data.name).css("color", data.color)}
-            onMouseLeave={() => $("." + data.name).css("color", "")}
-          >
-            {data.name}
-          </div>
-        </a>
-        <p className="dot" style={{ color: data.color }}>
-          .
-        </p>
-      </div>
-    );
-  };
   return (
     <div className="footer">
       <h2>GET IN TOUCH</h2>
@@ -53,3 +34,28 @@ export default function Footer() {
     </div>
   );
 }
+
+const Social = (data) => {
+  const changeColor = (name, color = "") => {
+    const element = getElement("." + name);
+    element.style.color = color;
+  };
+  return (
+    <div className="link-wrapper">
+      <a href={data.link} target="_blank" rel="noopener noreferrer">
+        <div
+          className={"social " + data.name}
+          // onMouseEnter={() => $("." + data.name).css("color", data.color)}
+          onMouseEnter={() => changeColor(data.name, data.color)}
+          // onMouseLeave={() => $("." + data.name).css("color", "")}
+          onMouseLeave={() => changeColor(data.name, "")}
+        >
+          {data.name}
+        </div>
+      </a>
+      <p className="dot" style={{ color: data.color }}>
+        .
+      </p>
+    </div>
+  );
+};

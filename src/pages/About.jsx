@@ -1,46 +1,69 @@
 import React, { Component } from "react";
-import Header from "./component/Header";
-import $ from "jquery";
-import me from "./assests/img/me.png";
-import js from "./assests/img/JS.png";
-import rn from "./assests/img/rn.png";
-import rjs from "./assests/img/rjs.png";
-import html from "./assests/img/html.png";
-import css from "./assests/img/css.png";
-import redux from "./assests/img/redux.png";
-import flutter from "./assests/img/flutter.png";
-import fastapi from "./assests/img/fastapi.png";
-import mongodb from "./assests/img/mongo.png";
-import node from "./assests/img/node.png";
-import git from "./assests/img/git.png";
-import xd from "./assests/img/xd.png";
-import Footer from "./component/Footer";
+import Header from "../component/Header";
+// import me from "../assests/img/me.png";
+import js from "../assests/img/JS.png";
+import rn from "../assests/img/rn.png";
+import rjs from "../assests/img/rjs.png";
+import html from "../assests/img/html.png";
+import css from "../assests/img/css.png";
+import redux from "../assests/img/redux.png";
+import flutter from "../assests/img/flutter.png";
+import fastapi from "../assests/img/fastapi.png";
+import mongodb from "../assests/img/mongo.png";
+import node from "../assests/img/node.png";
+import git from "../assests/img/git.png";
+import xd from "../assests/img/xd.png";
+import Footer from "../component/Footer";
+import { getElement } from "../utils";
 let scroll = 0;
 export default class About extends Component {
   scrollHandler2 = () => {
+    console.log("first");
     scroll = window.scrollY;
-    if (window.location.hash === "#/about") {
-      if (window.innerWidth > 768) {
-        if (scroll >= 200) {
-          $("body").css("background-color", "#fff");
-          $(".info").css("background-color", "rgba(0, 0, 0, 0.8)");
-          $(".intro h1").css("color", "#fff");
-        } else {
-          $(".info").css("background-color", "");
-          $("body").css("background-color", "#fff");
-          $(".intro h1").css("color", "#000");
-        }
-      } else {
-        if (scroll >= 100) {
-          $("body").css("background-color", "#fff");
-          $(".info").css("background-color", "rgba(0, 0, 0, 0.8)");
-          $(".intro h1").css("color", "#fff");
-        } else {
-          $(".info").css("background-color", "");
-          $("body").css("background-color", "#fff");
-          $(".intro h1").css("color", "#000");
-        }
-      }
+    if (window.location.hash === "#/") {
+      const shouldChange = scroll >= (window.innerWidth > 768 ? 200 : 100);
+
+      document.body.style.backgroundColor = "#fff";
+      getElement(".info").style.backgroundColor = shouldChange
+        ? "rgba(0, 0, 0, 0.8)"
+        : "";
+      getElement(".intro h1").style.color = shouldChange ? "#fff" : "#000";
+
+      //   const scrollThreshold = window.innerWidth > 768 ? 200 : 100;
+      //   const infoElement = document.querySelector(".info");
+      //   const introTitle = document.querySelector(".intro h1");
+
+      //   if (scroll >= scrollThreshold) {
+      //     document.body.style.backgroundColor = "#fff";
+      //     if (infoElement)
+      //       infoElement.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+      //     if (introTitle) introTitle.style.color = "#fff";
+      //   } else {
+      //     if (infoElement) infoElement.style.backgroundColor = "";
+      //     document.body.style.backgroundColor = "#fff";
+      //     if (introTitle) introTitle.style.color = "#000";
+      //   }
+      //   if (window.innerWidth > 768) {
+      //     if (scroll >= 200) {
+      //       $("body").css("background-color", "#fff");
+      //       $(".info").css("background-color", "rgba(0, 0, 0, 0.8)");
+      //       $(".intro h1").css("color", "#fff");
+      //     } else {
+      //       $(".info").css("background-color", "");
+      //       $("body").css("background-color", "#fff");
+      //       $(".intro h1").css("color", "#000");
+      //     }
+      //   } else {
+      //     if (scroll >= 100) {
+      //       $("body").css("background-color", "#fff");
+      //       $(".info").css("background-color", "rgba(0, 0, 0, 0.8)");
+      //       $(".intro h1").css("color", "#fff");
+      //     } else {
+      //       $(".info").css("background-color", "");
+      //       $("body").css("background-color", "#fff");
+      //       $(".intro h1").css("color", "#000");
+      //     }
+      //   }
     }
   };
 
@@ -48,9 +71,10 @@ export default class About extends Component {
     document.title = "About • Shahbaz Shaikh";
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
-    if (window.location.hash === "#/about") {
-      window.addEventListener("scroll", this.scrollHandler2, false);
-    }
+    console.log(window.location.hash);
+    // if (window.location.hash === "#/projects") {
+    window.addEventListener("scroll", this.scrollHandler2, false);
+    // }
   }
 
   componentWillUnmount() {
@@ -63,10 +87,15 @@ export default class About extends Component {
         <div
           className="p-lang"
           onMouseEnter={() => {
-            $("." + data.text.replace(/\s/g, "")).css("opacity", 1);
+            const ele = getElement("." + data.text.replace(/\s/g, ""));
+            ele && (ele.style.opacity = 1);
+            // $("." + data.text.replace(/\s/g, "")).css("opacity", 1);
           }}
           onMouseLeave={() => {
-            $("." + data.text.replace(/\s/g, "")).css("opacity", 0);
+            const ele = getElement("." + data.text.replace(/\s/g, ""));
+            ele && (ele.style.opacity = 0);
+
+            // $("." + data.text.replace(/\s/g, "")).css("opacity", 0);
           }}
         >
           <h2>{data.text}</h2>
@@ -81,10 +110,10 @@ export default class About extends Component {
     };
     return (
       <div className="about-container">
-        <Header link="/" />
+        <Header link="/projects" />
         <div
           className="parallax"
-          style={{ backgroundImage: "url(" + me + ")" }}
+          //   style={{ backgroundImage: "url(" + me + ")" }}
         >
           <div className="info">
             <div className="intro">
@@ -136,6 +165,12 @@ export default class About extends Component {
                   <br />
                   April 2019 - May 2021
                 </h2>
+
+                <h2>
+                  Ease My AI
+                  <br />
+                  May 2021 - Dec 2025
+                </h2>
                 <div className="sizedbox" />
                 <h1>Hobbies</h1>
                 <h2>Gym</h2>
@@ -164,7 +199,7 @@ export default class About extends Component {
               <Language text="FLUTTER" level="PROFICIENT" img={flutter} />
               <Language text="FASTAPI" level="NOVICE" img={fastapi} />
               <Language text="MONGODB" level="PROFICIENT" img={mongodb} />
-              <Language text="NODEJS" level="NOVICE" img={node} />
+              <Language text="NODEJS" level="PROFICIENT" img={node} />
               <Language text="GIT" level="PROFICIENT" img={git} />
               <Language text="ADOBE XD" level="PROFICIENT" img={xd} />
             </div>
