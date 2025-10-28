@@ -5,7 +5,7 @@
   "type": "module",
   "homepage": "http://sbaz44.github.io/portfolio/",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 4242",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",

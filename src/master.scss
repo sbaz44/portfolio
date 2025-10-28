@@ -21,6 +21,12 @@ body {
 // @media (min-width: 768px) and (max-width: 1024px) {
 
 // }
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
 header {
   position: fixed;
   top: 0;
@@ -653,208 +659,6 @@ header {
   }
 }
 
-.about-container {
-  // height: 500vh;
-  .parallax {
-    // height: 150vh;
-    background-attachment: fixed;
-    background-position: right;
-    background-position-y: bottom;
-    background-repeat: no-repeat;
-    background-size: 38vw;
-    @media (min-width: 768px) and (max-width: 1024px) {
-    }
-    @media only screen and (max-width: 768px) {
-      background-position: center;
-      // height: 208vh;
-      background-size: cover;
-      background-position-x: center;
-    }
-    .info {
-      height: 100%;
-      transition: all 400ms ease-in-out;
-      .intro {
-        display: flex;
-        align-items: center;
-        padding: 6vw;
-        padding-top: 70vh;
-        @media only screen and (max-width: 768px) {
-          padding-top: 0;
-        }
-        h1 {
-          font-family: "Black Han Sans", sans-serif;
-          width: 50%;
-          font-size: 50px;
-          text-transform: uppercase;
-          transition: all 400ms ease-in-out;
-          line-height: 0.9;
-          color: #000;
-          @media (min-width: 768px) and (max-width: 1024px) {
-          }
-          @media only screen and (max-width: 768px) {
-            font-size: 35px;
-            width: 80%;
-            margin-top: 120%;
-          }
-        }
-      }
-      .row {
-        display: flex;
-        // height: 10vh;
-        color: #fff;
-        padding: 0 6vw;
-        @media (min-width: 768px) and (max-width: 1024px) {
-        }
-        @media only screen and (max-width: 768px) {
-          flex-direction: column;
-          padding-bottom: 4vw;
-        }
-        h1 {
-          font-family: "Staatliches", "Roboto";
-          letter-spacing: 8px;
-          font-weight: 100;
-          font-size: 0.875rem;
-          margin-bottom: 20px;
-          // font-size: 20px;
-        }
-        h2 {
-          font-family: "Black Han Sans", sans-serif;
-          text-transform: uppercase;
-          margin-bottom: 10px;
-          font-size: 1rem;
-          font-weight: 500;
-        }
-        .download {
-          --border-color: #858585;
-          --border-width: 5px;
-          --bottom-distance: 0px; /* you can increase this */
-          display: inline-block;
-          background-image: linear-gradient(
-            var(--border-color),
-            var(--border-color)
-          );
-          cursor: pointer;
-          background-size: 100% var(--border-width);
-          background-repeat: no-repeat;
-          transition: background-size 0.5s;
-          background-position: 50% calc(100% - var(--bottom-distance));
-          a {
-            color: #fff !important;
-          }
-        }
-
-        .sizedbox {
-          height: 30px;
-        }
-        .education {
-          flex: 1;
-        }
-        .language {
-          flex: 1;
-          @media only screen and (max-width: 768px) {
-            margin-top: 30px;
-          }
-        }
-      }
-    }
-  }
-  .skills {
-    padding: 02vw 6vw;
-
-    .header {
-      font-family: "Black Han Sans", sans-serif;
-      font-size: 70px;
-      margin-bottom: 30px;
-      @media only screen and (max-width: 768px) {
-        margin-bottom: 10px;
-        margin-top: 20px;
-      }
-    }
-    .row {
-      display: flex;
-      @media only screen and (max-width: 768px) {
-        flex-direction: column;
-      }
-      .column {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        flex: 1;
-        .p-lang {
-          position: relative;
-          line-height: 0.8;
-          cursor: pointer;
-          margin-bottom: 40px;
-          h2 {
-            font-family: "Black Han Sans", sans-serif;
-            font-weight: 400;
-            font-size: 30px;
-          }
-          h3 {
-            font-family: "Staatliches", "Roboto";
-            font-weight: 100;
-            font-size: 0.875rem;
-          }
-          .p-icon {
-            width: 40px;
-            position: absolute;
-            right: -10%;
-            top: 50%;
-            opacity: 0;
-            z-index: 10;
-          }
-          .REACT {
-            width: 80px;
-            right: -70%;
-          }
-          .REDUX {
-            width: 80px;
-            right: -70%;
-          }
-          .FLUTTER {
-            width: 80px;
-            right: -70%;
-          }
-          .FASTAPI {
-            width: 80px;
-            right: -70%;
-          }
-          .MONGODB {
-            width: 80px;
-            right: -50%;
-          }
-          .NODEJS {
-            width: 80px;
-            right: -50%;
-          }
-          .GIT {
-            width: 80px;
-            right: -90%;
-          }
-          .HTML {
-            right: -50%;
-          }
-          .CSS {
-            right: -60%;
-          }
-        }
-      }
-    }
-
-    @supports (-webkit-text-stroke: 1px #383838) {
-      .header {
-        -webkit-text-stroke: 1px #383838;
-        -webkit-text-fill-color: white;
-      }
-    }
-  }
-
-  .about-footer {
-    padding: 20px;
-    background-color: rgba($color: #000000, $alpha: 0.8);
-  }
-}
-
 .logo:hover .name-text {
   letter-spacing: 5px;
   color: rgb(0, 0, 0);
@@ -877,5 +681,164 @@ header {
   }
   to {
     opacity: 1;
+  }
+}
+
+.about_page_container {
+  display: flex;
+  background-color: rgb(21, 19, 18);
+  height: 100%;
+  padding-top: 60px;
+  min-height: 100vh;
+  width: auto;
+  color: #fff;
+  .about_column_container {
+    align-items: center;
+    background-color: #fff0;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: min-content;
+    justify-content: center;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    .about_column_wrapper {
+      align-items: flex-start;
+      background-color: #fff0;
+      display: flex;
+      flex: 1 0 0px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 100px;
+      height: min-content;
+      justify-content: flex-start;
+      max-width: 1140px;
+      overflow: visible;
+      padding: 0;
+      position: relative;
+      width: 1px;
+      .left_colum {
+        position: relative;
+        background-color: #fff;
+        border-radius: 16px;
+        padding: 30px 20px;
+        font-family: Black Han Sans, sans-serif;
+        text-align: center;
+        overflow: hidden;
+        flex-shrink: 0;
+        .name {
+          font-size: 24px;
+          color: #000;
+        }
+        .desc {
+          max-width: 300px;
+          margin-top: 120px;
+          color: rgb(106, 107, 110);
+        }
+        .design1 {
+          position: absolute;
+          top: -18px;
+          left: 0;
+          width: 194px;
+          height: 100px;
+        }
+        .design2 {
+          position: absolute;
+          flex: none;
+          height: 166px;
+          // width: 270px;
+          top: 348px;
+          left: -135px;
+        }
+      }
+      .right_colum {
+        .header-text {
+          display: flex;
+          flex-direction: column;
+          font-family: Black Han Sans, sans-serif;
+          font-size: 80px;
+          color: #fff;
+          span {
+            color: rgb(106, 107, 110);
+          }
+        }
+        .desc {
+          font-size: 18px;
+          line-height: 140%;
+        }
+        .counter {
+          animation: counter var(--animation-duration, 2s) ease-in-out forwards;
+          counter-reset: num var(--num);
+          counter-set: num var(--num);
+          font: 800 40px system-ui;
+          font-family: Black Han Sans, sans-serif;
+          font-size: 80px;
+
+          &::after {
+            content: counter(num);
+          }
+        }
+
+        @keyframes counter {
+          from {
+            --num: 0;
+          }
+          to {
+            --num: var(--target-num, 100);
+          }
+        }
+      }
+    }
+  }
+}
+
+.flex {
+  display: flex;
+}
+.f1 {
+  flex: 1;
+}
+.jcc {
+  justify-content: center;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.jcsa {
+  justify-content: space-around;
+}
+
+.jcse {
+  justify-content: space-evenly;
+}
+.jce {
+  justify-content: end;
+}
+.aic {
+  align-items: center;
+}
+.fdc {
+  flex-direction: column;
+}
+
+.g4 {
+  gap: 4px;
+}
+.g6 {
+  gap: 6px;
+}
+.g8 {
+  gap: 8px;
+}
+.g16 {
+  gap: 16px;
+  @media (max-width: 1300px) {
+    gap: 8px;
   }
 }
