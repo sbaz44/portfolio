@@ -1,5 +1,20 @@
 import React from "react";
 import me from "../assests/img/me.png";
+import js from "../assests/img/JS.png";
+import rn from "../assests/img/rn.png";
+import rjs from "../assests/img/rjs.png";
+import html from "../assests/img/html.png";
+import css from "../assests/img/css.png";
+import redux from "../assests/img/redux.png";
+import flutter from "../assests/img/flutter.png";
+import fastapi from "../assests/img/fastapi.png";
+import mongodb from "../assests/img/mongo.png";
+import node from "../assests/img/node.png";
+import git from "../assests/img/git.png";
+import xd from "../assests/img/xd.png";
+import redis from "../assests/img/redis.png";
+import express from "../assests/img/express.png";
+import next from "../assests/img/next.png";
 export default function About() {
   return (
     <div className="about_page_container">
@@ -13,7 +28,7 @@ export default function About() {
               draggable={false}
               style={{
                 userSelect: "none",
-                opacity: 0,
+                // opacity: 0,
               }}
             />
             <p className="name">Shahbaz Shaikh</p>
@@ -23,10 +38,7 @@ export default function About() {
             </div>
           </div>
           <div className="right_colum">
-            <h1 className="header-text">
-              SOFTWARE
-              <span>ENGINEER</span>
-            </h1>
+            <Header text={"SOFTWARE"} subtext={"ENGINEER"} />
             <p className="desc">
               I am a passionate Software Developer 🚀 from India with more than
               6 years experience delivering tech solutions, avid programmer and
@@ -34,9 +46,28 @@ export default function About() {
               improve development process and code quality, I love simple and
               elegant solutions for every problem.
             </p>
-            <div className="flex g8">
-              <Counter num={"6"} />
-              <Counter num={"2"} />
+            <div className="flex g8 counter_wrapper">
+              <div className="flex fdc">
+                <Counter num={"6"} />
+                <p>YEARS OF EXPERIENCE</p>
+              </div>
+              <div className="flex fdc">
+                <Counter num={"12"} />
+                <p>PROJECTS COMPLETED</p>
+              </div>
+            </div>
+            <div className="skill_wrapper">
+              <Header text={"Technical"} subtext={"Skills"} />
+              <div className="skill_block">
+                {skill_data.map((item) => {
+                  return (
+                    <div className="skill_item">
+                      <p className="skill_name">{item.name}</p>
+                      <img className="skill_image" src={item.img} />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>
@@ -45,7 +76,66 @@ export default function About() {
   );
 }
 
-const Counter = ({ num = 100, duration = 2 }) => {
+const Header = ({ text, subtext }) => {
+  return (
+    <h1 className="header-text">
+      {text}
+      <span>{subtext}</span>
+    </h1>
+  );
+};
+
+const skill_data = [
+  {
+    name: "Javascript",
+    img: js,
+  },
+  {
+    name: "React.js",
+    img: rjs,
+  },
+  {
+    name: "Next.js",
+    img: next,
+  },
+  {
+    name: "React Native",
+    img: rn,
+  },
+  {
+    name: "Flutter",
+    img: flutter,
+  },
+  {
+    name: "Node.js",
+    img: node,
+  },
+  {
+    name: "Express.js",
+    img: express,
+  },
+  {
+    name: "MongoDB",
+    img: mongodb,
+  },
+  {
+    name: "FastAPI",
+    img: fastapi,
+  },
+  {
+    name: "GIT",
+    img: git,
+  },
+  {
+    name: "Redis",
+    img: redis,
+  },
+  {
+    name: "Adobe XD",
+    img: xd,
+  },
+];
+const Counter = ({ num = 100, duration = 2, text = "+" }) => {
   return (
     <div
       className="counter"
@@ -53,7 +143,9 @@ const Counter = ({ num = 100, duration = 2 }) => {
         "--target-num": num,
         "--animation-duration": `${duration}s`,
       }}
-    ></div>
+    >
+      {text}
+    </div>
   );
 };
 

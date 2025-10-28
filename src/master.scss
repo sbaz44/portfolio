@@ -722,7 +722,9 @@ header {
       position: relative;
       width: 1px;
       .left_colum {
+        top: 40px;
         position: relative;
+        position: sticky;
         background-color: #fff;
         border-radius: 16px;
         padding: 30px 20px;
@@ -732,6 +734,7 @@ header {
         flex-shrink: 0;
         .name {
           font-size: 24px;
+          margin-top: 24px;
           color: #000;
         }
         .desc {
@@ -751,7 +754,7 @@ header {
           flex: none;
           height: 166px;
           // width: 270px;
-          top: 348px;
+          top: 368px;
           left: -135px;
         }
       }
@@ -761,7 +764,9 @@ header {
           flex-direction: column;
           font-family: Black Han Sans, sans-serif;
           font-size: 80px;
+          letter-spacing: 12px;
           color: #fff;
+          text-transform: uppercase;
           span {
             color: rgb(106, 107, 110);
           }
@@ -769,6 +774,10 @@ header {
         .desc {
           font-size: 18px;
           line-height: 140%;
+        }
+        .counter_wrapper {
+          gap: 24px;
+          margin-top: 60px;
         }
         .counter {
           animation: counter var(--animation-duration, 2s) ease-in-out forwards;
@@ -780,6 +789,42 @@ header {
 
           &::after {
             content: counter(num);
+          }
+        }
+        .skill_wrapper {
+          margin-top: 120px;
+          .skill_block {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            height: 320px;
+            margin-top: 60px;
+            .skill_item {
+              position: relative;
+              text-align: center;
+              &:hover {
+                .skill_name {
+                  display: block;
+                }
+                .skill_image {
+                  display: none;
+                }
+              }
+              & > * {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+              .skill_name {
+                display: none;
+              }
+              .skill_image {
+                width: 60px;
+                height: 60px;
+                object-fit: contain;
+              }
+            }
           }
         }
 
