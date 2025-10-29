@@ -830,7 +830,60 @@ header {
         .work_experience_wrapper {
           margin-top: 80px;
           .experience_card_wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
             margin-top: 60px;
+            .experience_card_block {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              border-radius: 16px;
+              padding: 16px;
+              line-height: 140%;
+              transition: all 0.2s ease-in-out;
+              .company_name {
+                font-size: 26px;
+              }
+              .company_post {
+                font-size: 16px;
+                color: rgb(106, 107, 110);
+              }
+              .arrow_icon {
+                position: absolute;
+                top: 50px;
+                right: 50px;
+                width: 32px;
+                height: 32px;
+              }
+              &:hover {
+                background-color: rgba(255, 255, 255, 0.03);
+                scale: 1.01;
+                .arrow_icon {
+                  animation: bounce2 2s ease infinite;
+                }
+              }
+              &:active {
+                scale: 1.1;
+              }
+            }
+          }
+        }
+
+        @keyframes bounce2 {
+          0%,
+          20%,
+          50%,
+          80%,
+          100% {
+            transform: translateY(0);
+          }
+          40% {
+            transform: translateY(-30px);
+          }
+          60% {
+            transform: translateY(-15px);
           }
         }
 

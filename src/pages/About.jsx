@@ -74,7 +74,9 @@ export default function About() {
             <div className="work_experience_wrapper">
               <Header text={"6 YEARS OF"} subtext={"EXPERIENCE"} />
               <div className="experience_card_wrapper">
-                <ExperienceCard />
+                {experience_data.map((item) => (
+                  <ExperienceCard data={item} key={item.company_name} />
+                ))}
               </div>
             </div>
           </div>
@@ -93,8 +95,15 @@ const Header = ({ text, subtext }) => {
   );
 };
 
-const ExperienceCard = ({}) => {
-  return <div>Experience one</div>;
+const ExperienceCard = ({ data }) => {
+  return (
+    <div className="experience_card_block">
+      <p className="company_name">{data.company_name}</p>
+      <p className="company_post">{data.post}</p>
+      <p className="company_post">{data.duration}</p>
+      <ArrowDownIcon className="arrow_icon" />
+    </div>
+  );
 };
 
 const skill_data = [
@@ -147,6 +156,43 @@ const skill_data = [
     img: xd,
   },
 ];
+
+const experience_data = [
+  {
+    company_name: "Ease My AI",
+    post: "Senior Frontend Developer | Product based",
+    duration: "May 2021 - Present",
+    location: "Mumbai",
+    skills: [
+      "Served as Frontend Product Architect, leading technical decisions and implementation",
+      "Successfully developed three major product versions with progressive feature enhancements",
+      "Built initial versions using React.js and migrated second version to Next.js for improved performance",
+      "Expanded full-stack capabilities by implementing Node.js, Express, Redis, and MongoDB for backend services",
+      "Implemented real-time data integration using Socket.io and WebSockets for live updates",
+      "Designed and implemented Role-Based Access Control (RBAC) system for secure user management",
+      "Architected backend-driven frontend widgets with dynamic data rendering capabilities",
+      "Engineered complex real-time filtering and search functionalities through Socket.io communication",
+      "Solved challenging dynamic request body generation for diverse widget requirements",
+      "Implemented IndexDB caching strategy that significantly improved application performance",
+      "Optimized frontend architecture to handle complex data flows and state management",
+      "Led the technical evolution from monolithic to more scalable, component-based architecture",
+    ],
+  },
+  {
+    company_name: "Devomark",
+    post: "Frontend Developer | Service based",
+    duration: "April 2019 - May 2021",
+    location: "Mumbai",
+    skills: [
+      "Developed client websites using core web technologies: HTML, CSS, and JavaScript",
+      "Gained expertise in translating client requirements into functional web solutions",
+      "Transitioned to React.js after one year, rapidly mastering modern frontend development.",
+      "Implemented backend integrations for client projects, connecting frontend with various APIs",
+      "Managed client relationships directly, gathering requirements and implementing feedback.",
+    ],
+  },
+];
+
 const Counter = ({ num = 100, duration = 2, text = "+" }) => {
   return (
     <div
@@ -193,6 +239,23 @@ const Design2 = (props) => (
     <path
       d="M 248.202 59.765 C 248.171 61.334 248.402 62.763 249.823 63.785 C 249.748 63.325 249.655 62.869 249.601 62.408 C 249.355 60.298 249.548 58.268 250.889 56.462 C 251.644 55.443 252.623 54.655 253.833 54 C 253.732 54.327 253.625 54.582 253.577 54.847 C 253.368 56.003 253.771 57.005 254.618 57.812 C 255.239 58.405 255.957 58.916 256.671 59.415 C 257.942 60.304 258.983 61.357 259.525 62.775 C 260.818 66.16 259.435 69.865 255.81 71.445 C 252.418 72.922 248.04 71.34 246.671 68.035 C 245.523 65.264 245.822 62.585 247.774 60.15 C 247.856 60.048 247.949 59.954 248.041 59.86 C 248.064 59.835 248.101 59.822 248.202 59.765 Z M 249.493 68.381 C 250.425 69.591 252.817 70.454 255.031 69.641 C 257.311 68.804 258.617 66.535 258.134 64.249 C 257.759 62.477 256.094 60.97 254.647 60.771 C 255.558 61.904 255.94 63.15 255.71 64.548 C 255.495 65.861 254.23 67.58 253.345 67.708 C 253.788 66.808 254.04 65.885 253.811 64.881 C 253.09 66.821 251.685 68.006 249.493 68.381 Z"
       fill="rgb(255,255,255)"
+    />
+  </svg>
+);
+
+const ArrowDownIcon = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="54px"
+    height="54px"
+    viewBox="0 0 52 52"
+    enableBackground="new 0 0 52 52"
+    xmlSpace="preserve"
+    {...props}
+  >
+    <path
+      d="M9.6,31c-0.8,0.8-0.8,1.9,0,2.7l15,14.7c0.8,0.8,2,0.8,2.8,0l15.1-14.7c0.8-0.8,0.8-1.9,0-2.7l-2.8-2.7 c-0.8-0.8-2-0.8-2.8,0l-4.7,4.6C31.4,33.7,30,33.2,30,32V5c0-1-0.9-2-2-2h-4c-1.1,0-2,1.1-2,2v27c0,1.2-1.4,1.7-2.2,0.9l-4.7-4.6 c-0.8-0.8-2-0.8-2.8,0L9.6,31z"
+      fill="#63b8f9"
     />
   </svg>
 );
