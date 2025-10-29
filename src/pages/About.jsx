@@ -28,10 +28,11 @@ export default function About() {
               draggable={false}
               style={{
                 userSelect: "none",
-                // opacity: 0,
+                opacity: 0,
               }}
             />
-            <p className="name">Shahbaz Shaikh</p>
+            {/* <p className="name">Shahbaz Shaikh</p> */}
+            <p className="name">Abdul Aziz</p>
             <div className="desc">
               Enthusiastic developer eager to contribute to team success through
               hardwork, attention to detail.
@@ -69,6 +70,13 @@ export default function About() {
                 })}
               </div>
             </div>
+
+            <div className="work_experience_wrapper">
+              <Header text={"6 YEARS OF"} subtext={"EXPERIENCE"} />
+              <div className="experience_card_wrapper">
+                <ExperienceCard />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -83,6 +91,10 @@ const Header = ({ text, subtext }) => {
       <span>{subtext}</span>
     </h1>
   );
+};
+
+const ExperienceCard = ({}) => {
+  return <div>Experience one</div>;
 };
 
 const skill_data = [

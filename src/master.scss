@@ -827,6 +827,12 @@ header {
             }
           }
         }
+        .work_experience_wrapper {
+          margin-top: 80px;
+          .experience_card_wrapper {
+            margin-top: 60px;
+          }
+        }
 
         @keyframes counter {
           from {
