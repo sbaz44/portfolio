@@ -4,7 +4,7 @@ export default function ClientCard(props) {
     let body = getElement("body");
     let card = getElement(".card");
     let isEnter = type === "enter";
-    body.style.backgroundColor = isEnter ? props.data.bg : "black";
+    body.style.backgroundColor = isEnter ? props.data.bg : "rgb(21, 19, 18)";
     card.style.backgroundColor = isEnter ? props.data.bg : "";
     props.passChildData(isEnter ? props.data.screen[0] : "");
   };

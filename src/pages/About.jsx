@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import me from "../assests/img/me.png";
 import js from "../assests/img/JS.png";
 import rn from "../assests/img/rn.png";
@@ -15,10 +15,18 @@ import xd from "../assests/img/xd.png";
 import redis from "../assests/img/redis.png";
 import express from "../assests/img/express.png";
 import next from "../assests/img/next.png";
+import Footer from "../component/Footer";
+import Header from "../component/Header";
 export default function About() {
+  useEffect(() => {
+    document.title = "Portfolio • Shahbaz Shaikh";
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }, []);
   return (
     <div className="about_page_container">
       <div className="about_column_container">
+        <Header link="/projects" />
         <div className="about_column_wrapper">
           <div className="left_colum">
             <Design1 className="design1" />
@@ -28,18 +36,19 @@ export default function About() {
               draggable={false}
               style={{
                 userSelect: "none",
-                opacity: 0,
+                // opacity: 0,
+                width: "300px",
               }}
             />
-            {/* <p className="name">Shahbaz Shaikh</p> */}
-            <p className="name">Abdul Aziz</p>
+            <p className="name">Shahbaz Shaikh</p>
+            {/* <p className="name">Abdul Aziz</p> */}
             <div className="desc">
               Enthusiastic developer eager to contribute to team success through
               hardwork, attention to detail.
             </div>
           </div>
           <div className="right_colum">
-            <Header text={"SOFTWARE"} subtext={"ENGINEER"} />
+            <HeaderText text={"SOFTWARE"} subtext={"ENGINEER"} />
             <p className="desc">
               I am a passionate Software Developer 🚀 from India with more than
               6 years experience delivering tech solutions, avid programmer and
@@ -58,7 +67,7 @@ export default function About() {
               </div>
             </div>
             <div className="skill_wrapper">
-              <Header text={"Technical"} subtext={"Skills"} />
+              <HeaderText text={"Technical"} subtext={"Skills"} />
               <div className="skill_block">
                 {skill_data.map((item) => {
                   return (
@@ -72,7 +81,7 @@ export default function About() {
             </div>
 
             <div className="work_experience_wrapper">
-              <Header text={"6 YEARS OF"} subtext={"EXPERIENCE"} />
+              <HeaderText text={"6 YEARS OF"} subtext={"EXPERIENCE"} />
               <div className="experience_card_wrapper">
                 {experience_data.map((item, idx) => (
                   <ExperienceCard
@@ -85,12 +94,13 @@ export default function About() {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </div>
   );
 }
 
-const Header = ({ text, subtext }) => {
+const HeaderText = ({ text, subtext }) => {
   return (
     <h1 className="header-text">
       {text}

@@ -55,7 +55,7 @@ header {
     letter-spacing: 10px;
     transition: all 200ms linear;
     font-family: "Exo 2", "Roboto";
-    color: red;
+    color: #fff;
     visibility: hidden;
     @media (min-width: 768px) and (max-width: 1024px) {
     }
@@ -240,6 +240,8 @@ header {
     }
   }
   .move-forward {
+    // display: flex;
+    // flex-direction: column;
     font-size: 50px;
     font-weight: bolder !important;
     // font-family: Staatliches;
@@ -248,6 +250,7 @@ header {
     line-height: 0.9;
     @media only screen and (max-width: 768px) {
       font-size: 35px;
+      text-align: center;
     }
     .underline {
       position: relative;
@@ -661,7 +664,7 @@ header {
 
 .logo:hover .name-text {
   letter-spacing: 5px;
-  color: rgb(0, 0, 0);
+  // color: rgb(0, 0, 0);
   opacity: 1;
   visibility: visible;
   right: -200px;
@@ -697,8 +700,9 @@ header {
     background-color: #fff0;
     display: flex;
     flex: none;
-    flex-direction: row;
+    // flex-direction: row;
     flex-wrap: nowrap;
+    flex-direction: column;
     gap: 10px;
     height: min-content;
     justify-content: center;
@@ -711,7 +715,6 @@ header {
       background-color: #fff0;
       display: flex;
       flex: 1 0 0px;
-      flex-direction: row;
       flex-wrap: nowrap;
       gap: 100px;
       height: min-content;
@@ -720,8 +723,12 @@ header {
       overflow: visible;
       padding: 0;
       position: relative;
-      width: 1px;
+      margin-top: 60px;
       .left_colum {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
         top: 40px;
         position: relative;
         position: sticky;
@@ -759,21 +766,12 @@ header {
         }
       }
       .right_colum {
-        .header-text {
-          display: flex;
-          flex-direction: column;
-          font-family: Black Han Sans, sans-serif;
-          font-size: 80px;
-          letter-spacing: 12px;
-          color: #fff;
-          text-transform: uppercase;
-          span {
-            color: rgb(106, 107, 110);
-          }
-        }
+        display: flex;
+        flex-direction: column;
         .desc {
           font-size: 18px;
           line-height: 140%;
+          margin-top: 16px;
         }
         .counter_wrapper {
           gap: 24px;
@@ -905,6 +903,18 @@ header {
       }
     }
   }
+  .header-text {
+    display: flex;
+    flex-direction: column;
+    font-family: Black Han Sans, sans-serif;
+    font-size: 80px;
+    letter-spacing: 12px;
+    color: #fff;
+    text-transform: uppercase;
+    span {
+      color: rgb(106, 107, 110);
+    }
+  }
 }
 
 .flex {
@@ -951,5 +961,105 @@ header {
   gap: 16px;
   @media (max-width: 1300px) {
     gap: 8px;
+  }
+}
+
+@media (min-width: 1080px) and (max-width: 1439px) {
+  .about_page_container {
+    .about_column_container {
+      .about_column_wrapper {
+        gap: 50px;
+        padding: 0 40px;
+      }
+    }
+    .header-text {
+      font-size: 60px;
+    }
+  }
+}
+
+@media (min-width: 810px) and (max-width: 1079px) {
+  .about_page_container {
+    .about_column_container {
+      .about_column_wrapper {
+        flex-direction: column;
+        gap: 40px;
+        max-width: 810px;
+        padding: 0 30px;
+        .left_colum {
+          position: relative;
+          top: unset;
+          width: 100%;
+          .desc {
+            width: 100%;
+            margin-top: 16px;
+          }
+        }
+        .right_colum {
+          .counter_wrapper {
+            justify-content: center;
+          }
+        }
+      }
+    }
+    .header-text {
+      font-size: 60px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 809px) {
+  .about_page_container {
+    .about_column_container {
+      .about_column_wrapper {
+        flex-direction: column;
+        gap: 40px;
+        max-width: 810px;
+        padding: 0 30px;
+        .left_colum {
+          position: relative;
+          top: unset;
+          width: 100%;
+          .desc {
+            width: 100%;
+            margin-top: 16px;
+          }
+          .design2 {
+            top: 38%;
+            left: -25%;
+            rotate: 16deg;
+          }
+        }
+        .right_colum {
+          .desc {
+            margin-top: 16px;
+            width: 90%;
+            align-self: center;
+          }
+          .counter_wrapper {
+            justify-content: center;
+            .counter {
+              font-size: 48px;
+              text-align: center;
+            }
+          }
+          .skill_wrapper {
+            margin-top: 70px;
+            .skill_block {
+              gap: 16px;
+            }
+          }
+        }
+      }
+    }
+    .header-text {
+      font-size: 32px;
+      text-align: center;
+      flex-direction: row;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
   }
 }
