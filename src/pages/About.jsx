@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import me from "../assests/img/me.png";
 import js from "../assests/img/JS.png";
 import rn from "../assests/img/rn.png";
@@ -74,8 +74,12 @@ export default function About() {
             <div className="work_experience_wrapper">
               <Header text={"6 YEARS OF"} subtext={"EXPERIENCE"} />
               <div className="experience_card_wrapper">
-                {experience_data.map((item) => (
-                  <ExperienceCard data={item} key={item.company_name} />
+                {experience_data.map((item, idx) => (
+                  <ExperienceCard
+                    data={item}
+                    key={item.company_name}
+                    open={idx === 0}
+                  />
                 ))}
               </div>
             </div>
@@ -95,13 +99,35 @@ const Header = ({ text, subtext }) => {
   );
 };
 
-const ExperienceCard = ({ data }) => {
+const ExperienceCard = ({ data, open = false }) => {
+  const [isOpen, setisOpen] = useState(open);
+
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     //rotate the icon
+  //   }
+  // }, [isOpen]);
+
   return (
     <div className="experience_card_block">
-      <p className="company_name">{data.company_name}</p>
-      <p className="company_post">{data.post}</p>
-      <p className="company_post">{data.duration}</p>
-      <ArrowDownIcon className="arrow_icon" />
+      <div className="flex fdc g16" onClick={() => setisOpen(!isOpen)}>
+        <p className="company_name">{data.company_name}</p>
+        <p className="company_post">{data.post}</p>
+        <p className="company_post">{data.duration}</p>
+      </div>
+      <ArrowDownIcon
+        className="arrow_icon"
+        style={{
+          rotate: isOpen ? "180deg" : null,
+        }}
+      />
+      {isOpen && (
+        <ul className="experience_desc_wrapper">
+          {data.skills.map((item) => (
+            <li className="desc_item">{item} </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
@@ -164,18 +190,18 @@ const experience_data = [
     duration: "May 2021 - Present",
     location: "Mumbai",
     skills: [
-      "Served as Frontend Product Architect, leading technical decisions and implementation",
-      "Successfully developed three major product versions with progressive feature enhancements",
-      "Built initial versions using React.js and migrated second version to Next.js for improved performance",
-      "Expanded full-stack capabilities by implementing Node.js, Express, Redis, and MongoDB for backend services",
-      "Implemented real-time data integration using Socket.io and WebSockets for live updates",
-      "Designed and implemented Role-Based Access Control (RBAC) system for secure user management",
+      "Served as Frontend Product Architect, leading technical decisions and implementation.",
+      "Successfully developed 3 major product versions with progressive feature enhancements.",
+      "Built initial versions using React.js and migrated second version to Next.js for improved performance.",
+      "Expanded full-stack capabilities by implementing Node.js, Express, Redis, and MongoDB for backend services.",
+      "Implemented real-time data integration using Socket.io and WebSockets for live updates.",
+      "Designed and implemented Role-Based Access Control (RBAC) system for secure user management.",
       "Architected backend-driven frontend widgets with dynamic data rendering capabilities",
-      "Engineered complex real-time filtering and search functionalities through Socket.io communication",
-      "Solved challenging dynamic request body generation for diverse widget requirements",
-      "Implemented IndexDB caching strategy that significantly improved application performance",
-      "Optimized frontend architecture to handle complex data flows and state management",
-      "Led the technical evolution from monolithic to more scalable, component-based architecture",
+      "Engineered complex real-time filtering and search functionalities through Socket.io communication.",
+      // "Solved challenging dynamic request body generation for diverse widget requirements",
+      // "Implemented IndexDB caching strategy that significantly improved application performance",
+      "Optimized frontend architecture to handle complex data flows and state management.",
+      "Led the technical evolution from monolithic to more scalable, component-based architecture.",
     ],
   },
   {

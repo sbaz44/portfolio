@@ -854,18 +854,25 @@ header {
                 position: absolute;
                 top: 50px;
                 right: 50px;
-                width: 32px;
-                height: 32px;
+                width: 24px;
+                height: 24px;
+              }
+              .experience_desc_wrapper {
+                padding-left: 20px;
+                margin-top: 16px;
+                li {
+                  margin-bottom: 8px;
+                }
               }
               &:hover {
                 background-color: rgba(255, 255, 255, 0.03);
-                scale: 1.01;
+                // scale: 1.01;
                 .arrow_icon {
                   animation: bounce2 2s ease infinite;
                 }
               }
               &:active {
-                scale: 1.1;
+                scale: 1.01;
               }
             }
           }
