@@ -39,6 +39,7 @@ export default function About() {
                 // opacity: 0,
                 width: "300px",
               }}
+              className="profile_image"
             />
             <p className="name">Shahbaz Shaikh</p>
             {/* <p className="name">Abdul Aziz</p> */}

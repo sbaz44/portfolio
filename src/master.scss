@@ -206,6 +206,8 @@ header {
   @media only screen and (max-width: 768px) {
     margin-top: 30px;
     padding-left: 0;
+    text-align: center;
+    padding-bottom: 60px;
   }
   h2 {
     letter-spacing: 10px;
@@ -219,6 +221,7 @@ header {
     font-family: "Black Han Sans", sans-serif;
     margin-bottom: 50px;
     @media only screen and (max-width: 768px) {
+      justify-content: center;
       font-size: 35px;
       margin-bottom: 20px;
     }
@@ -693,7 +696,6 @@ header {
   height: 100%;
   padding-top: 60px;
   min-height: 100vh;
-  width: auto;
   color: #fff;
   .about_column_container {
     align-items: center;
@@ -803,6 +805,7 @@ header {
               &:hover {
                 .skill_name {
                   display: block;
+                  user-select: none;
                 }
                 .skill_image {
                   display: none;
@@ -1021,6 +1024,9 @@ header {
           position: relative;
           top: unset;
           width: 100%;
+          .profile_image {
+            width: 280px !important;
+          }
           .desc {
             width: 100%;
             margin-top: 16px;
@@ -1049,6 +1055,10 @@ header {
             .skill_block {
               gap: 16px;
             }
+          }
+          .arrow_icon {
+            right: 0 !important;
+            animation: bounce2 2s ease infinite;
           }
         }
       }

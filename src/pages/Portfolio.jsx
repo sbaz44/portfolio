@@ -78,7 +78,7 @@ export default class Portfolio extends Component {
         ],
         desc: "A web application for pill management used by patient to show daily report and statistics.",
         teamStrength: 2,
-        duration: " Dec 2019 - Present",
+        duration: " Dec 2019 - April 2021",
       },
       {
         name: "Alfa Carpeting",
@@ -231,7 +231,7 @@ export default class Portfolio extends Component {
         ],
         desc: "Ecommerce website",
         teamStrength: 2,
-        duration: "Mar 2021 - Present",
+        duration: "Mar 2021 - November 2021",
       },
     ],
     AppClient: [
@@ -250,7 +250,7 @@ export default class Portfolio extends Component {
         ],
         desc: "A mobile application for pill management used by patient to show daily report and statistics.",
         teamStrength: 2,
-        duration: " Dec 2019 - Present",
+        duration: " Dec 2019 - Jan 2021",
       },
       {
         name: "Alfa Carpeting",
