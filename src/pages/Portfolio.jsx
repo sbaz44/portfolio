@@ -78,7 +78,7 @@ export default class Portfolio extends Component {
         ],
         desc: "A web application for pill management used by patient to show daily report and statistics.",
         teamStrength: 2,
-        duration: " Dec 2019 - Present",
+        duration: " Dec 2019 - April 2021",
       },
       {
         name: "Alfa Carpeting",
@@ -231,7 +231,7 @@ export default class Portfolio extends Component {
         ],
         desc: "Ecommerce website",
         teamStrength: 2,
-        duration: "Mar 2021 - Present",
+        duration: "Mar 2021 - November 2021",
       },
     ],
     AppClient: [
@@ -250,7 +250,7 @@ export default class Portfolio extends Component {
         ],
         desc: "A mobile application for pill management used by patient to show daily report and statistics.",
         teamStrength: 2,
-        duration: " Dec 2019 - Present",
+        duration: " Dec 2019 - Jan 2021",
       },
       {
         name: "Alfa Carpeting",
@@ -329,27 +329,30 @@ export default class Portfolio extends Component {
     // );
   };
   componentDidMount() {
-    document.title = "Portfolio • Shahbaz Shaikh";
+    document.title = "Projects • Shahbaz Shaikh";
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+    const body = getElement("body");
+    body.style.backgroundColor = "rgb(21, 19, 18)";
+
     // if (window.location.hash !== "#/projects") {
-    window.addEventListener("scroll", this.scrollHandler, false);
+    // window.addEventListener("scroll", this.scrollHandler, false);
     // }
   }
 
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.scrollHandler, true);
+    // window.removeEventListener("scroll", this.scrollHandler, true);
   }
 
   render() {
     return (
       <div className="portfolio-container">
         <Header link="/" />
-        <div className="quote">
+        {/* <div className="quote">
           <div className="text">
             while(!(succeed=try())); <span>|</span>
           </div>
-        </div>
+        </div> */}
 
         <div className="desktop-wrapper">
           <div className="title">
@@ -584,3 +587,27 @@ export default class Portfolio extends Component {
 
 // https://sawad.framer.website/
 // https://adityapunmiya.com/
+
+// @media (min-width: 1080px) and (max-width: 1439px) {
+//     .framer-uRlNd .framer-130ph47 {
+//         gap: 50px;
+//         padding: 0 40px;
+//     }
+// }
+
+// @media (min-width: 810px) and (max-width: 1079px) {
+//     .framer-uRlNd .framer-130ph47 {
+//         flex-direction: column;
+//         gap: 40px;
+//         max-width: 810px;
+//         padding: 0 30px;
+//     }
+// }
+
+// @media (max-width: 809px) {
+//     .framer-uRlNd .framer-130ph47 {
+//         flex-direction: column;
+//         gap: 40px;
+//         padding: 0 20px;
+//     }
+// }

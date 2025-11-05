@@ -36,13 +36,14 @@ export default function Header(props) {
       <NavLink to="/">
         <div className="logo">
           <img
-            src={scroll >= 200 ? whitelogo : logoblack}
+            // src={scroll >= 200 ? whitelogo : logoblack}
+            src={whitelogo}
             alt="logo"
             className="logo-icon"
           />
           <p
             className="name-text"
-            style={scroll >= 200 ? { color: "white" } : { color: "black" }}
+            // style={scroll >= 200 ? { color: "white" } : { color: "black" }}
           >
             Shahbaz Shaikh
           </p>
@@ -51,7 +52,7 @@ export default function Header(props) {
       <NavLink to={props.link}>
         <div
           className="link"
-          style={scroll >= 200 ? { color: "white" } : { color: "black" }}
+          // style={scroll >= 200 ? { color: "white" } : { color: "black" }}
         >
           {props.link === "/" ? "ABOUT" : "PROJECTS"}
         </div>

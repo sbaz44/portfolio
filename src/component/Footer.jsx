@@ -16,20 +16,24 @@ export default function Footer() {
           name="IG"
           link="https://www.instagram.com/sbaz44/"
         />
-        <Social
+        {/* <Social
           color="#1877f2"
           name="FB"
           link="https://www.facebook.com/sbaz44"
-        />
+        /> */}
       </div>
       <div className="move-forward">
-        <p>
+        <p>WANT TO MOVE FORWARD?</p>
+        <a className="underline" href="mailto:shaikhshahbaz44@gmail.com">
+          DROP A LINE.
+        </a>
+        {/* <p>
           WANT TO MOVE FORWARD? <br />
           {window.innerWidth < 768 && <br />}
           <a className="underline" href="mailto:shaikhshahbaz44@gmail.com">
             DROP A LINE.
           </a>
-        </p>
+        </p> */}
       </div>
     </div>
   );
